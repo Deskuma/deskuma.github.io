@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Town</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <!-- KaTeX: MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.play.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.collide2d.min.js"></script>
+-->
+    <!-- SEO -->
+    <meta name="description"
+        content="Explore the fascinating world of prime numbers in Prime Town, where mathematics meets art.">
+    <meta name="keywords" content="prime numbers, mathematics, art, Prime Town">
+    <meta name="author" content="Deskuma">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Prime Town">
+    <meta property="og:description"
+        content="Explore the fascinating world of prime numbers in Prime Town, where mathematics meets art.">
+</head>
+
+<body>
+
+    <div id="prime-town">
+
+        <!-- 合成波のグラフィック領域（後でcanvas等を追加） -->
+        <div id="wave-graphic">
+            <div id="wave-title-wrapper">
+                <h1 id="town-title">
+                    Prime Wave Town<br />
+                    \[P_w(x)=\Sigma_{p}^{2, 3, 5}{\cos\left(\frac{2\pi x}{p}\right)}\]
+                </h1>
+            </div>
+            <!-- canvas はp5.jsが描画 -->
+        </div>
+        <div id="sub-title">
+            Prime Number is ...
+        </div>
+        <div class="prime-row">
+            <div class="prime empty"></div>
+            <div class="prime-base">2</div>
+            <div class="prime-base">3</div>
+            <div class="prime-base">5</div>
+            <div class="prime empty"></div>
+        </div>
+        
+        <!-- 剰余類ヘッダー -->
+        <div class="header-row">
+            <div class="label-cell">Residue class.m=\( \small(30n+m) \) </div>
+            <div class="residue">\(\small+1\)</div>
+            <div class="residue">\(\small+7\)</div>
+            <div class="residue">\(\small+11\)</div>
+            <div class="residue">\(\small+13\)</div>
+            <div class="divider"></div>
+            <div class="residue">\(\small+17\)</div>
+            <div class="residue">\(\small+19\)</div>
+            <div class="residue">\(\small+23\)</div>
+            <div class="residue">\(\small+29\)</div>
+        </div>
+
+        <!-- 素数行 -->
+    </div>
+
+</body>
+
+</html>

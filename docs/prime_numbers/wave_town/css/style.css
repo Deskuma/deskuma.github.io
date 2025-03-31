@@ -1,0 +1,202 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    background-color: #fdfdfd;
+    color: #222;
+    margin: 0;
+    padding: 1rem;
+    /* 1rem or 1em で自然な余白 */
+    box-sizing: border-box;
+}
+
+/* ヘッダー行 */
+.header-row,
+.prime-row {
+    display: grid;
+    grid-template-columns: 60px repeat(4, 50px) 10px repeat(4, 50px);
+    /* 1+4+divider+4 */
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+/* ラベル */
+.label-cell {
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 0.9em;
+    font-family: 'Georgia', serif;
+}
+
+/* 剰余表示セル */
+.residue {
+    text-align: center;
+    font-size: 0.9em;
+    color: #444;
+}
+
+/* 素数セル */
+.prime {
+    text-align: center;
+    padding: 4px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: 'Georgia', serif;
+}
+
+/* 素数セル */
+.prime-base {
+    text-align: center;
+    padding: 3px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: 'Georgia', serif;
+}
+
+/* 空セル（非素数） */
+.prime.empty {
+    background-color: #f5f5f5;
+    color: #aaa;
+    border: 1px dashed #ccc;
+}
+
+/* 中央の境界線 */
+.divider {
+    width: 10px;
+    height: 100%;
+    border-left: 2px solid #999;
+    margin: 0 4px;
+}
+
+/* ヘッダー */
+.header-row .divider {
+    border-left: 2px dashed #aaa;
+}
+
+/* 双子素数マーク用（あとで使える） */
+.prime.twin-prime {
+    background-color: #fffae6;
+    border-color: #ffa500;
+}
+
+/* ヘッダー行の素数セル */
+.header-row {
+    position: sticky;
+    top: 0;
+    background-color: #fdfdfd;
+    /* 背景が透けないように */
+    z-index: 10;
+    /* 上に出す */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ccc;
+}
+
+/* ヘッダー行の影（Pending: 保留） */
+/*
+.header-row {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+*/
+
+body {
+    overflow-y: scroll;
+}
+
+#wave-graphic {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+#wave-title-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none;
+}
+/* キャンバスに明示幅を与える（任意） */
+canvas {
+    max-width: 480px;
+    width: 90vw;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+    position: static !important; /* ←これが超重要！ */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#prime-town {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#town-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: bold;
+    color: rgba(50, 50, 50, 0.8);
+    margin-top: 10px;
+    text-shadow: 2px 4px 5px rgba(15, 15, 15, 0.6);
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.05em;
+}
+
+#sub-title {
+    text-align: left;
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: bold;
+    color: rgba(50, 50, 50, 0.8);
+    margin-top: 10px;
+    text-shadow: 2px 4px 5px rgba(15, 15, 15, 0.6);
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.05em;
+}
+
+/* 画面幅が狭いときのスタイル */
+@media (max-width: 640px) {
+    .header-row,
+    .prime-row {
+        grid-template-columns: 45px repeat(4, 48px) 10px repeat(4, 48px);
+        /* 1+4+divider+4 */
+    }
+    .label-cell {
+        font-size: 0.8em;
+        padding-right: 5px;
+    }
+    .prime {
+        font-size: 0.8em;
+        padding: 2px 0;
+    }
+}
+/* スマホ用のスタイル */
+@media (max-width: 480px) {
+    .header-row,
+    .prime-row {
+        grid-template-columns: 40px repeat(4, 30px) 10px repeat(4, 30px);
+        /* 1+4+divider+4 */
+    }
+    .label-cell {
+        font-size: 0.7em;
+        padding-right: 5px;
+    }
+    .prime {
+        font-size: 0.7em;
+        padding: 2px 0;
+    }
+}
