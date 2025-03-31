@@ -50,6 +50,14 @@ function isRelevantPrime(p) {
 // -- 4. 素数を表示に追加
 let currentRow = 0;
 
+const appendBatchSize = 30; // 先読み行数
+
+function appendBatch() {
+    for (let i = 0; i < appendBatchSize; i++) {
+        appendPrimeRow(currentRow++);
+    }
+}
+
 function appendPrimeRow(n) {
     const row = document.createElement('div');
     row.className = 'prime-row';
@@ -86,7 +94,7 @@ function onScroll() {
     const bodyHeight = document.body.offsetHeight;
 
     if (scrollBottom >= bodyHeight - 300) {
-        appendPrimeRow(currentRow++);
+        appendBatch();
     }
 }
 
@@ -99,13 +107,13 @@ window.addEventListener('DOMContentLoaded', () => {
     // 画面超えるまで出す（最初）
     const minHeight = window.innerHeight + 100;
     while (document.body.offsetHeight < minHeight) {
-        appendPrimeRow(currentRow++);
+        appendBatch();
     }
 
     // 足りない場合の保険（万一の環境差異用）
     setInterval(() => {
         if (document.body.offsetHeight <= window.innerHeight) {
-            appendPrimeRow(currentRow++);
+            appendBatch();
         }
     }, 500);
 
