@@ -1,0 +1,177 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+}
+
+a {
+  color: lemonchiffon;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 174, 0, 0.3);
+}
+
+a:link a:hover a:visited a:active a:focus {
+  color: lemonchiffon;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 174, 0, 0.7);
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+/* a[target="_blank"]::after {
+  content: "🔗";
+  margin-left: 4px;
+  text-decoration: none;
+} */
+a[target="_blank"]::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.3em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='lemonchiffon' viewBox='0 0 16 16'%3E%3Cpath d='M10.5 2a.5.5 0 0 0 0 1h2.793L8.146 8.146a.5.5 0 1 0 .708.708L14 3.707V6.5a.5.5 0 0 0 1 0v-4A.5.5 0 0 0 14.5 2h-4z'/%3E%3Cpath d='M13 10.5a.5.5 0 0 1 .5.5v2A1.5 1.5 0 0 1 12 14.5H3.5A1.5 1.5 0 0 1 2 13V4A1.5 1.5 0 0 1 3.5 2.5H6a.5.5 0 0 1 0 1H3.5a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H12a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 .5-.5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.1em 1em;
+  padding: 0.1em;
+}
+
+li::before {
+  color: lemonchiffon;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1em;
+}
+
+li::before {
+  content: "🌿";
+}
+
+li li::before {
+  content: "🍀";
+}
+
+li li li::before {
+  content: "🌱";
+}
+
+
+li::marker {
+  color: lemonchiffon;
+  font-weight: bold;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid lemonchiffon;
+  height: 1px;
+  background-color: rgba(255, 250, 205, 0.5);
+  margin: 1em 0;
+}
+
+caption {
+  font-weight: bold;
+  text-align: left;
+}
+
+th {
+  text-align: left;
+}
+
+iframe {
+  box-sizing: border-box;
+  width: 100%;
+  height: 85%;
+  border: none;
+}
+
+.pgp {
+  font-family: monospace;
+  font-size: 0.7em;
+  letter-spacing: -0.05em;
+  color: lemonchiffon;
+}
+
+.link-button {
+  background-color: transparent;
+  border: 1px solid lemonchiffon;
+  border-radius: 5px;
+  color: lemonchiffon;
+  padding: 3px 7px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.link-button:hover {
+  background-color: lemonchiffon;
+  color: black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background-color: black;
+  color: lightgray;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+#deskuma-h1 {
+  height: 1.0em;
+  width: auto;
+  vertical-align: -4px;
+}
+
+/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M10.5 2a.5.5 0 0 0 0 1h2.793L8.146 8.146a.5.5 0 1 0 .708.708L14 3.707V6.5a.5.5 0 0 0 1 0v-4A.5.5 0 0 0 14.5 2h-4z"/>
+  <path d="M13 10.5a.5.5 0 0 1 .5.5v2A1.5 1.5 0 0 1 12 14.5H3.5A1.5 1.5 0 0 1 2 13V4A1.5 1.5 0 0 1 3.5 2.5H6a.5.5 0 0 1 0 1H3.5a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H12a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 .5-.5z"/>
+</svg> */
