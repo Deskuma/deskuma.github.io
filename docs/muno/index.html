@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>人工無能：言霊の残響</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+            background: #fdf6e3;
+        }
+
+        #log {
+            white-space: pre-wrap;
+            border: 1px solid #aaa;
+            padding: 1em;
+            height: 300px;
+            overflow-y: auto;
+            background: #fff;
+        }
+
+        #input {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🐺 賢狼人工無能</h1>
+    <div id="log">👤「こんにちは」<br />🐺「こんにちは、じゃな！」</div>
+    <input type="text" id="input" placeholder="話しかけてみてくりゃれ…" />
+
+    <script>
+        const log = document.getElementById('log');
+        const input = document.getElementById('input');
+
+        let memory = [];
+
+        function splitWords(text) {
+            // 文を句読点・空白で分割し、適当に長い単語は分割する
+            return text
+                .replace(/[。、．，]/g, ' ')
+                .split(/\s+/)
+                .flatMap(word => {
+                    if (word.length > 6) return word.match(/.{1,3}/g); // 長い言葉は3文字ずつ切る
+                    return word;
+                })
+                .filter(Boolean);
+        }
+
+        function remember(words) {
+            // 単語位置ごとに記憶（先頭/中間/末尾）
+            words.forEach((word, i) => {
+                const pos = i === 0 ? 'start' : (i === words.length - 1 ? 'end' : 'middle');
+                memory.push({ word, pos });
+                if (memory.length > 1000) memory.shift(); // 忘れる
+            });
+        }
+
+        function reply() {
+            if (memory.length === 0) return "……まだ何も知らんのぅ。";
+            // ランダムに前・中・後の単語から選ぶ
+            let choices = [];
+            ['start', 'middle', 'end'].forEach(pos => {
+                const group = memory.filter(m => m.pos === pos);
+                if (group.length > 0) {
+                    const word = group[Math.floor(Math.random() * group.length)].word;
+                    choices.push(word);
+                }
+            });
+            return choices.join('、') + '、じゃな。';
+        }
+
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                const userText = input.value.trim();
+                if (!userText) return;
+                const words = splitWords(userText);
+                remember(words);
+                const response = reply();
+                log.textContent += `\n👤「${userText}」\n🐺「${response}」`;
+                input.value = '';
+                log.scrollTop = log.scrollHeight;
+            }
+        });
+    </script>
+</body>
+
+</html>
