@@ -52,15 +52,35 @@ let currentRow = 0;
 
 const appendBatchSize = 30; // 先読み行数
 
+function isMersennePrime(p) {
+    // メルセンヌ素数は形 p = 2^n - 1 である
+    if (p < 2) return false;
+    // 全ビットが１であるかチェック
+    if ((p + 1) & p) return false;
+    // 原理：メルセンヌ素数はp+1で2^nになるので、元のpとの論理積ANDでゼロとなる。e.g. 0b01111 & 0b10000 = 0
+    // 素数判定済みであるので、ここでは単純にビットチェックで判定でOK
+    return true;
+}
+
 function appendBatch() {
     for (let i = 0; i < appendBatchSize; i++) {
         appendPrimeRow(currentRow++);
+    }
+    // 6桁以上の素数が現れたら幅広クラスを追加
+    if (currentRow > 3000) {
+        document.getElementById('prime-town').classList.add('wide-prime-town');
+        document.getElementById('residue-row-grid').classList.add('header-row-wide');
     }
 }
 
 function appendPrimeRow(n) {
     const row = document.createElement('div');
-    row.className = 'prime-row';
+    if (n > 3000) {
+        row.className = 'prime-row prime-row-wide';
+    } else {
+        row.className = 'prime-row';
+    }
+    row.id = `prime-row-grid`;
 
     const label = document.createElement('div');
     label.className = 'label-cell';
@@ -73,8 +93,16 @@ function appendPrimeRow(n) {
         const p = 30 * n + r;
         if (isPrimeDynamic(p)) {
             cell.textContent = p;
+            // メルセンヌ素数のスタイルを適用
+            if (isMersennePrime(p)) {
+                cell.classList.add('prime-M');
+            }
         } else {
             cell.classList.add('empty');
+        }
+        // 6桁以上なら幅広クラスを追加
+        if (p >= 100000) {
+            cell.classList.add('prime-wide');
         }
         row.appendChild(cell);
 
@@ -98,6 +126,7 @@ function onScroll() {
     }
 }
 
+// スクロールイベントリスナーの追加
 window.addEventListener('scroll', onScroll);
 
 // -- 6. 初期化呼び出し
@@ -122,6 +151,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 500); // 素数リストが DOM に反映された後
 });
 
+// -- 7. p5.js のキャンバスサイズ変更
 function windowResized() {
     const canvasWidth = Math.min(document.body.scrollWidth, 480); // ← 本当の横幅を見る
     resizeCanvas(canvasWidth, 200);
@@ -141,6 +171,7 @@ function setup() {
     noFill();
 }
 
+// -- B. アニメーション描画
 function draw() {
     background(255);
     stroke(0, 50);
