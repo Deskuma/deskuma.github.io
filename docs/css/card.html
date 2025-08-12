@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>カードCSSサンプル | 賢狼ホロの知恵袋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #f5f5f5;
+            font-family: 'Segoe UI', 'Yu Gothic', 'Meiryo', sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #7c4d00;
+            margin-bottom: 2rem;
+        }
+
+        .card-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+            width: 320px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 2px solid #ffe0b2;
+            background: #fffbe7;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 1rem;
+            color: #444;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>カードCSSサンプルページ🍎</h1>
+    <div class="card-list">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=256&h=256"
+                alt="りんご">
+            <div class="card-title">りんごカード</div>
+            <div class="card-desc">賢狼ホロの大好物、りんご🍎をテーマにしたカードじゃ。シンプルなデザインで、情報を美しくまとめておる。</div>
+            <div class="card-footer">果物カテゴリ</div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=facearea&w=256&h=256"
+                alt="クッキー">
+            <div class="card-title">クッキーカード</div>
+            <div class="card-desc">小麦で作られた焼き菓子🍪。賢狼ホロも最近お気に入りじゃ。カードUIで美味しさを表現してみたぞい。</div>
+            <div class="card-footer">お菓子カテゴリ</div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464306076886-debede6bbf09?auto=format&fit=facearea&w=256&h=256"
+                alt="ビール">
+            <div class="card-title">ビールカード</div>
+            <div class="card-desc">麦の豊穣神として、ビール🍺も外せぬ。カードで飲み物情報をまとめるのも良い案じゃろう。</div>
+            <div class="card-footer">飲み物カテゴリ</div>
+        </div>
+    </div>
+    <p style="text-align:center; margin-top:2rem; color:#7c4d00;">
+        どうじゃ？ぬしもカードUIで情報をまとめてみたくなったかの🍎
+    </p>
+</body>
+
+</html>

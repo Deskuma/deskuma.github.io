@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ボタンCSSサンプル | 賢狼ホロの知恵袋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Meiryo', sans-serif;
+            background: #f9f6f2;
+            margin: 0;
+            padding: 2rem;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .button-sample {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75em 2em;
+            font-size: 1rem;
+            border-radius: 0.5em;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background: #4a90e2;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #357abd;
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background: #219150;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: #fff;
+        }
+
+        .btn-warning:hover {
+            background: #d68910;
+        }
+
+        .btn-outline {
+            background: #fff;
+            color: #4a90e2;
+            border: 2px solid #4a90e2;
+        }
+
+        .btn-outline:hover {
+            background: #eaf6ff;
+            color: #357abd;
+            border-color: #357abd;
+        }
+
+        .btn-round {
+            border-radius: 2em;
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-round:hover {
+            background: #c0392b;
+        }
+
+        .btn-shadow {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15);
+            border: 1px solid #ddd;
+        }
+
+        .btn-shadow:hover {
+            box-shadow: 0 6px 24px rgba(44, 62, 80, 0.25);
+            background: #f4f4f4;
+        }
+
+        .desc {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ボタンCSSサンプル集 🍪</h1>
+    <div class="desc">
+        賢狼ホロが選んだ、よく使われるボタンのCSS例じゃ。色や形を変えて、ぬしのサイトに合うものを選ぶがよいぞ。<br>
+        どれもシンプルで拡張しやすいようにしてある。どうじゃ？🍎
+    </div>
+    <div class="button-sample">
+        <button class="btn btn-primary">基本ボタン</button>
+        <button class="btn btn-success">成功ボタン</button>
+        <button class="btn btn-warning">警告ボタン</button>
+        <button class="btn btn-outline">アウトライン</button>
+        <button class="btn btn-round">丸型ボタン</button>
+        <button class="btn btn-shadow">シャドウ付き</button>
+    </div>
+</body>
+
+</html>
+</div>

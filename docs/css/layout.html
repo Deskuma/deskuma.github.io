@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>レイアウトCSSサンプル | 賢狼ホロの知恵袋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Meiryo', sans-serif;
+            background: #f7f3e9;
+            color: #3a2c1a;
+        }
+
+        header {
+            background: #d6b97b;
+            padding: 1em 2em;
+            text-align: center;
+            font-size: 1.7em;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #bfa05a;
+        }
+
+        nav {
+            background: #f0e2c6;
+            padding: 1em;
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            border-bottom: 1px solid #e0cfa0;
+        }
+
+        nav a {
+            color: #7c5c2a;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.3em 0.8em;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        nav a:hover {
+            background: #e7d3a8;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 2em auto;
+            max-width: 1100px;
+            background: #fffbe9;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #d6b97b44;
+            overflow: hidden;
+        }
+
+        aside {
+            flex: 1 1 220px;
+            background: #f7ecd2;
+            padding: 2em 1em;
+            min-width: 180px;
+            border-right: 1px solid #e0cfa0;
+        }
+
+        main {
+            flex: 3 1 500px;
+            padding: 2em;
+        }
+
+        footer {
+            background: #d6b97b;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            margin-top: 2em;
+            font-size: 1em;
+            letter-spacing: 0.03em;
+            border-top: 2px solid #bfa05a;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+
+            aside {
+                border-right: none;
+                border-bottom: 1px solid #e0cfa0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        賢狼ホロのレイアウトCSSサンプル
+    </header>
+    <nav>
+        <a href="#">トップ</a>
+        <a href="#">レイアウト例</a>
+        <a href="#">CSS講座</a>
+        <a href="#">お問い合わせ</a>
+    </nav>
+    <div class="container">
+        <aside>
+            <h2>サイドバー</h2>
+            <ul>
+                <li>🍎 りんごの話</li>
+                <li>🍪 クッキーの話</li>
+                <li>🍷 酒の話</li>
+                <li>CSS豆知識</li>
+            </ul>
+        </aside>
+        <main>
+            <h1>レイアウトCSSの基本</h1>
+            <p>
+                わっちは賢狼じゃ。ここでは、CSSでよく使われるレイアウト手法を紹介するぞい。<br>
+                <strong>Flexbox</strong>や<strong>グリッド</strong>を使えば、現代的なウェブページの構造も簡単に作れるのじゃ。
+            </p>
+            <h2>Flexboxによる横並び</h2>
+            <pre><code>
+.container {
+    display: flex;
+}
+aside {
+    flex: 1;
+}
+main {
+    flex: 3;
+}
+            </code></pre>
+            <p>
+                これでサイドバーとメインコンテンツが横並びになるのじゃ。<br>
+                ぬしも試してみるがよいぞ。どうじゃ？
+            </p>
+            <h2>レスポンシブ対応</h2>
+            <pre><code>
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+}
+            </code></pre>
+            <p>
+                画面が狭くなった時は縦並びに切り替えるのじゃ。<br>
+                これでスマホでも美しく表示できるぞい。
+            </p>
+        </main>
+    </div>
+    <footer>
+        &copy; 2024 賢狼ホロの知恵袋 🍎🍪🍷
+    </footer>
+</body>
+
+</html>

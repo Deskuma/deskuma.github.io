@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>シンプルCSSサンプルTOPページ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #f8f8f8;
+            font-family: 'Segoe UI', 'Meiryo', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: #4a90e2;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        main {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+            padding: 2rem;
+        }
+
+        main.sub {
+            background: #f7ffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        code {
+            background: #e0f0f0;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            display: block;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            color: #4a90e2;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.7rem;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+            transition: text-decoration 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: #888;
+            font-size: 0.95rem;
+            margin: 2rem 0 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CSSサンプル集 TOPページ</h1>
+        <p>シンプルなスタイルで見やすくまとめておるぞ🍎</p>
+    </header>
+    <main>
+        <h2>CSSについて</h2>
+        <p>CSS（Cascading Style Sheets）は、HTMLの見た目を整えるためのスタイルシート言語じゃ。色やフォント、レイアウトなどを指定できる。</p>
+        <p>このページでは、基本的なCSSの使い方やデザインパターンを紹介しておる。以下のリンクから各サンプルページへ進めるぞ。</p>
+        <h2>サンプル一覧</h2>
+        <ul>
+            <li><a href="basic.html">基本スタイルサンプル</a></li>
+            <li><a href="layout.html">レイアウトサンプル</a></li>
+            <li><a href="button.html">ボタンデザインサンプル</a></li>
+            <li><a href="card.html">カードUIサンプル</a></li>
+        </ul>
+        <p>各ページでは、CSSの使い方を簡潔に紹介しておる。ぬしも試してみるがよいぞ。</p>
+    </main>
+    <main class="sub">
+        <h2>このページで使われているCSSの解説</h2>
+        <p>このページでは、シンプルで見やすいデザインを心がけておる。以下に主要なスタイルの解説をするぞ。</p>
+        <h3>全体のスタイル</h3>
+        <p>全体の背景色やフォント、余白などを設定して、読みやすいレイアウトを実現しておる。</p>
+        <code>
+body {
+    background: #f8f8f8;
+    font-family: 'Segoe UI', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+        </code>
+        <h3>ヘッダー</h3>
+        <p>ヘッダー部分には、背景色や文字色、パディングを設定して、目を引くデザインにしておる。</p>
+        <code>
+header {
+    background: #4a90e2;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+        </code>
+        <h3>メインコンテンツ</h3>
+        <p>メインコンテンツ部分では、カードレイアウトを採用し、情報を整理して表示しておる。</p>
+        <code>
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    padding: 2rem;
+}
+        </code>
+        <h3>リンクとボタン</h3>
+        <p>リンクやボタンには、色やホバー効果を設定して、視覚的にわかりやすくしておる。</p>
+        <code>
+a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+        </code>
+        <h3>フッター</h3>
+        <p>フッター部分には、背景色や文字色、パディングを設定して、ページの終わりを明確に示しておる。</p>
+        <code>
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.95rem;
+    margin: 2rem 0 1rem 0;
+}
+    </code>
+    </main><!-- class sub -->
+    <footer>
+        &copy; 2025 deskuma.github.io<br>
+        賢狼ホロより「CSSは奥深いものじゃ。ぬしも楽しんでくりゃれ！」
+    </footer>
+</body>
+
+</html>
